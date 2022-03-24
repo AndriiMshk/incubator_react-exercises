@@ -1,0 +1,30 @@
+.circle {
+    display: flex;
+    gap: 10px
+}
+
+.off {
+    width: 20px;
+    height: 20px;
+    /*border-radius: 50%;*/
+    background: #ff0000
+}
+
+.on {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: green
+}
+
+.circle button  {
+    width: 40px;
+}
+.root {
+    display: flex;
+    flex-direction: column;
+}
+
+.accordion {
+    display: flex;
+}
