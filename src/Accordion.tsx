@@ -4,18 +4,15 @@ import {AccordionBody} from './AccordionBody';
 
 type AccordionPropsType = {
     titleValue: string
+    isCollapsed: boolean
+    collapse: () => void
 }
 
-
 export const Accordion = (props: AccordionPropsType) => {
-
-    let [isCollapsed, setIsCollapsed] = useState(false)
-
-    const collapse = () => setIsCollapsed(!isCollapsed)
     return (
         <div>
-            <AccordionTitle title={props.titleValue} collapse={collapse}/>
-            {isCollapsed && <AccordionBody/>}
+            <AccordionTitle title={props.titleValue} collapse={props.collapse}/>
+            {props.isCollapsed && <AccordionBody/>}
         </div>
     )
 }

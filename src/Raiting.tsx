@@ -1,18 +1,35 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Star} from './Star';
 
-type RatingPropsType = {
-    selected: 0 | 1 | 2 | 3 | 4 | 5
-}
+export const Rating = () => {
 
-export const Rating = (props: RatingPropsType) => {
+    let [value, setValue] = useState(0)
+
+    const onClickHandler = () => {
+
+        setValue(value + 1)
+        if (value > 5) {
+            setValue(0)
+        }
+    }
+
     return (
         <div className='rating'>
-            <Star selected={props.selected > 0}/>
-            <Star selected={props.selected > 1}/>
-            <Star selected={props.selected > 2}/>
-            <Star selected={props.selected > 3}/>
-            <Star selected={props.selected > 4}/>
+            <Star selected={value > 0}
+                  onClickHandler={onClickHandler}
+            />
+            <Star selected={value > 1}
+                  onClickHandler={onClickHandler}
+            />
+            <Star selected={value > 2}
+                  onClickHandler={onClickHandler}
+            />
+            <Star selected={value > 4}
+                  onClickHandler={onClickHandler}
+            />
+            <Star selected={value > 5}
+                  onClickHandler={onClickHandler}
+            />
         </div>
     )
 }

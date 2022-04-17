@@ -1,12 +1,13 @@
 import React from 'react';
 
-type StartPropsType = {
+type StarPropsType = {
     selected: boolean
+    onClickHandler: any
 }
-export const Star = (props: StartPropsType) => {
-    if (props.selected) {
-        return <span> # </span>
-    } else {
-        return <span> * </span>
-    }
+
+export const Star: React.FC<StarPropsType> = ({selected, onClickHandler}) => {
+    return (
+        <span onClick={onClickHandler}>{selected ? '#' : '*'}</span>
+    )
 }
+

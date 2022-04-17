@@ -1,11 +1,11 @@
 import React, {useState} from 'react';
 
+type OnOffProps = {
+    x: boolean
+    switchOnOff: () => void
+}
 
-export const OnOff = () => {
-
-    let [x, setX] = useState(true)
-
-    const switchOnOff = () => setX(!x)
+export const OnOff: React.FC<OnOffProps> = ({x,switchOnOff}) => {
 
     return (
         <div className={'circle'}>

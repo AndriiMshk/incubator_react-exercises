@@ -5,10 +5,6 @@ type AccordionTitleProps = {
     collapse: () => void
 }
 
-
-
-
-
 export const AccordionTitle = (props: AccordionTitleProps) => {
 
     return (
