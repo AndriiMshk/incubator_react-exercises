@@ -1,13 +1,16 @@
-import React, {useState} from 'react';
+import React from 'react';
 
-type AccordionTitleProps = {
-    title: string
-    collapse: () => void
+interface AccordionTitleProps {
+  title: string
+  collapse: () => void
 }
 
-export const AccordionTitle = (props: AccordionTitleProps) => {
+export const AccordionTitle: React.FC<AccordionTitleProps> = ({
+  title,
+  collapse,
+}) => {
 
-    return (
-            <h1 onClick={props.collapse}>--{props.title}--</h1>
-    )
-}
+  return (
+    <h1 onClick={collapse}>--{title}--</h1>
+  );
+};

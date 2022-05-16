@@ -1,0 +1,23 @@
+select {
+  margin: 10px;
+}
+
+.main {
+  width: 60px;
+}
+
+.items {
+  background-color: white;
+  border: 3px black solid;
+  width: 50px;
+}
+.items div:hover, .items .hover {
+  background-color: blue;
+  color: white;
+}
+
+.items.current {
+  display: flex;
+  justify-content: space-between;
+}
+

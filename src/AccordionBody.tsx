@@ -1,14 +1,17 @@
 import React from 'react';
 
-
-export const AccordionBody = () => {
-    return (
-        <div>
-            <ul>
-                <li>1</li>
-                <li>2</li>
-                <li>3</li>
-            </ul>
-        </div>
-    )
+type AccordionBodyPropsType = {
+  items: { title: string, value: any }[]
+  onClick: (value: any) => void
 }
+
+export const AccordionBody: React.FC<AccordionBodyPropsType> = (props) => {
+  return (
+    <div>
+      <ul>
+        {props.items.map((el, index) => (
+          <li onClick={() => props.onClick(el.value)} key={index}>{el.title}</li>))}
+      </ul>
+    </div>
+  );
+};
