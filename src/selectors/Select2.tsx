@@ -16,7 +16,6 @@ export const Select2 = () => {
         if (hoveredItem >= items.length - 1) {
           setHoveredItem(items.length - 1);
         }
-
         break;
       case 'ArrowUp':
         setHoveredItem(hoveredItem - 1);
@@ -34,7 +33,7 @@ export const Select2 = () => {
     }
   };
 
-  useEffect(() => setActiveItem(items[hoveredItem]), [hoveredItem])
+  useEffect(() => setActiveItem(items[hoveredItem]), [hoveredItem]);
 
   return (<div>
       <select>
@@ -56,20 +55,23 @@ export const Select2 = () => {
         <div
           className={'items'}
         >
-          {items.map((item, index) => <div
-            key={index}
-            className={hoveredItem === index ? 'hover' : ''}
-            onClick={() => {
-              setActiveItem(item);
-              setCollapsed(false);
-              setHoveredItem(index)
-            }}
-          >
-            {item}
-          </div>)}
+          {items.map((item, index) => {
+            return (
+              <div
+                key={index}
+                className={hoveredItem === index ? 'hover' : ''}
+                onClick={() => {
+                  setActiveItem(item);
+                  setCollapsed(false);
+                }}
+                onMouseEnter={() => setHoveredItem(index)}
+              >
+                {item}
+              </div>
+            );
+          })}
         </div>}
       </div>
-
     </div>
   );
 };

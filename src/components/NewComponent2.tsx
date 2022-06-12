@@ -1,7 +1,7 @@
 import React from 'react';
-import {Header} from './site/haeder';
-import {Body} from './site/body';
-import {Footer} from './site/footer';
+import {Header} from '../site/haeder';
+import {Body} from '../site/body';
+import {Footer} from '../site/footer';
 
 export const NewComponent2 = () => {
     return (

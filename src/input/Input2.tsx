@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { v1 } from 'uuid';
-import { Rating } from './Raiting';
-import { Rating2, Rating2ValueType } from './Raiting2';
+import { Rating } from '../Rating/Raiting';
+import { Rating2, Rating2ValueType } from '../Rating/Raiting2';
 
 type messageType = {
   id: string

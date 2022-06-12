@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Rating2 } from './Raiting2';
+import { Rating2 } from '../Rating/Raiting2';
 
 export type InputItemPropsType = {
   id: string
